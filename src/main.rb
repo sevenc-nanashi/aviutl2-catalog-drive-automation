@@ -64,7 +64,7 @@ final_json =
 puts "Saving known hashes..."
 File.write(
   "./data/known_hashes.json",
-  JSON.pretty_generate(context.known_hashes)
+  JSON.pretty_generate(context.known_hashes.sort.to_h)
 )
 puts "Saving final JSON..."
 File.write("./final.json", JSON.pretty_generate(final_json))
