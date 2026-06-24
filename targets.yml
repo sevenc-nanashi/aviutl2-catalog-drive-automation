@@ -1,0 +1,13 @@
+- type: folder
+  id: 1-bRId887yGiUjTn_sibjmrj9JfiBw6eU
+  author: ラプソーン
+  author_id: Rhapthorne_0
+  versioning: date
+  recursive: false
+  license:
+    {
+      "type": "カスタムライセンス",
+      "isCustom": true,
+      "copyrights": [],
+      "licenseBody": "改変再配布等基本自由です",
+    }
