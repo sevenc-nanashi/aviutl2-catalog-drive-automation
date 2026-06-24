@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require "google/apis/drive_v3"
+require "http"
 require "stringio"
 
 FILE_FIELDS = "id,name,mimeType,modifiedTime,parents,sha256Checksum"
@@ -45,13 +46,16 @@ def download_file(file_id:)
   # content = StringIO.new
   # drive.get_file(file_id, supports_all_drives: true, download_dest: content)
   # content.string
-  HTTP.get(
-    "https://drive.usercontent.google.com/download",
-    params: {
-      id: file_id,
-      export: "download",
-      authuser: 0,
-      confirm: "t"
-    }
-  ).to_s
+  HTTP
+    .get(
+      "https://drive.usercontent.google.com/download",
+      params: {
+        id: file_id,
+        export: "download",
+        authuser: 0,
+        confirm: "t"
+      }
+    )
+    .body
+    .to_s
 end

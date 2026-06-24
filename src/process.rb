@@ -133,7 +133,7 @@ def process_file(context:, file:, author:, author_id:, versioning:, license:)
             {
               "action" => "copy",
               "from" => "{tmp}/#{file.name}",
-              "to" => path_for_file(file)
+              "to" => dir_for_file(file)
             }
           ],
           "uninstall" => [
